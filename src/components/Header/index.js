@@ -129,7 +129,7 @@ const Header = () => {
           sx={{ my: 2, color: 'white', display: 'block' }}
           
         >
-          <span style={{fontWeight:'bold'}} onClick={() => setModalShowAuth(true)}>About</span>
+          <span style={{fontWeight:'bold'}} onClick={() => setModalShowAbout(true)}>About</span>
         </Button>
             <Menu
               id="menu-appbar"
