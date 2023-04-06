@@ -80,6 +80,7 @@ const Header = () => {
   };
 
   const [modalShowAuth, setModalShowAuth] = React.useState(false);
+  const [modalShowAbout, setModalShowAbout] = React.useState(false);
   const authId = useSelector((state) => state.authId);
   const dispatch = useDispatch();
   const theme = useTheme();
@@ -143,12 +144,11 @@ const Header = () => {
                 horizontal: 'left',
               }}
               open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: 'block', md: 'none' },
               }}
             >
-                <MenuItem onClick={handleCloseNavMenu}>
+                <MenuItem onClick={() => setModalShowAbout(true)}>
                   <Typography textAlign="center" style={{fontWeight:'bold'}}>About</Typography>
                 </MenuItem>
             </Menu>
@@ -173,8 +173,8 @@ const Header = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               <Button
-                onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
+                onClick={() => setModalShowAbout(true)}
               >
                 About
               </Button>
@@ -239,6 +239,28 @@ const Header = () => {
         <Button onClick={() => setModalShowAuth(false)}>Close</Button>
       </Modal.Footer>
     </Modal>
+
+
+
+    <Modal
+    show={modalShowAbout}
+    onHide={() => setModalShowAbout(false)}
+    size="lg"
+    aria-labelledby="contained-modal-title-vcenter"
+    centered
+  >
+  <Modal.Header closeButton>
+  <Modal.Title id="contained-modal-title-vcenter">
+    About 
+  </Modal.Title>
+</Modal.Header>
+    <Modal.Body>
+      <h2><i>About the site content :)</i></h2>
+    </Modal.Body>
+    <Modal.Footer>
+      <Button onClick={() => setModalShowAbout(false)}>Close</Button>
+    </Modal.Footer>
+  </Modal>
 
     </AppBar>
   );
