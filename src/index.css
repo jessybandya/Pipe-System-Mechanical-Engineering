@@ -15,3 +15,14 @@ code {
 .ant-spin-dot-item {
   background-color: #fff;
 }
+input:focus{
+  outline: none;
+}
+
+/* bigger screen */
+@media (min-width: 700px){
+.main-body{
+  display: table;
+  margin: auto;
+}
+}
