@@ -251,15 +251,24 @@ const Header = () => {
   >
   <Modal.Header closeButton>
   <Modal.Title id="contained-modal-title-vcenter">
-    About 
+    Introduction 
   </Modal.Title>
 </Modal.Header>
     <Modal.Body>
-      <h2><i>About the site content :)</i></h2>
+    <center><i style={{fontWeight:'bold'}}>Welcome to our website for Pipe Sizing of Zone Distribution System!</i></center>
+    <hr />
+    <Typography variant="body2" color="text.secondary">
+    If you are involved in designing or installing Plumbing systems, you know that one of the most critical aspects of the process is determining the correct size of the pipes that will transport water throughout the system. That's where our website comes in - we've developed a powerful tool that makes it easy to calculate the correct pipe size for your zone distribution system.
+  </Typography>
+  <br />
+  <Typography variant="body2" color="text.secondary">
+  Our website is designed to help engineers, architects, contractors, and other professionals in the Building and Construction industry to quickly and accurately determine the appropriate pipe size for their projects. With our user-friendly interface, you can input your project details, such as the size of the building, the number of zones, and the required flow rate, and our tool will provide you with the optimal pipe sizes.
+</Typography>
+<br />
+<Typography variant="body2" color="text.secondary">
+Whether you are working on a small residential project or a large commercial building, our website can help you simplify the pipe sizing process and achieve optimal results. So why wait? Sign up today and start using our powerful tool to take your projects to the next level!
+</Typography>
     </Modal.Body>
-    <Modal.Footer>
-      <Button onClick={() => setModalShowAbout(false)}>Close</Button>
-    </Modal.Footer>
   </Modal>
 
     </AppBar>

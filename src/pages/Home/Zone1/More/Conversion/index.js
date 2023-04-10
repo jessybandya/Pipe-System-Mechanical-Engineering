@@ -36,10 +36,6 @@ const convert = () => {
     upperLimitY2(upper)
     lowerLimitY1(lower)
 
-    console.log("Upper x2", upper)
-    console.log("Lower x1", lower)
-    console.log("Upper y2", y2)
-    console.log("Lower y1", y1)
     var total = parseFloat(y1) + (((parseFloat(value)-parseFloat(lower)) * (parseFloat(y2)-parseFloat(y1)))/(parseFloat(upper)-parseFloat(lower)))
     setConvertedValue(total)
 

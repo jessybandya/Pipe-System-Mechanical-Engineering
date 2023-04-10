@@ -16,6 +16,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Description from './More/Description';
+import Final from './More/Final';
 
 function SmallExample() {
   const [modalShowBasement, setModalShowBasement] = React.useState(false);
@@ -33,6 +35,7 @@ function SmallExample() {
   const [thirdTotal, setThirdTotal] = React.useState(0.0);
   const [fourthTotal, setFourthTotal] = React.useState(0.0);
   const [fifthTotal, setFifthTotal] = React.useState(0.0);
+  const [pipeDevelopmentLength, setPipeDevelopmentLength] = React.useState(false);
   var value = parseFloat(basementTotal) + parseFloat(groundTotal) + parseFloat(firstTotal) + parseFloat(secondTotal) + parseFloat(thirdTotal) + parseFloat(fourthTotal) + parseFloat(fifthTotal)
 
   return (
@@ -41,9 +44,8 @@ function SmallExample() {
  >
      <div
      style={{
-      display:'flex',
-      alignItems:'center',
-      flexWrap:'wrap'
+      display:'table',
+      margin:'auto',
      }}
      >
      <Button style={{marginLeft:5, marginTop:8}} onClick={() => setModalShowBasement(true)} variant="contained" color="primary">Basement</Button>
@@ -74,7 +76,7 @@ function SmallExample() {
              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
            >
              <TableCell component="th" scope="row">
-               {basementTotal}
+               {basementTotal.toFixed(3)}
              </TableCell>
              <TableCell align="right">{groundTotal.toFixed(3)}</TableCell>
              <TableCell align="right">{firstTotal.toFixed(3)}</TableCell>
@@ -89,6 +91,9 @@ function SmallExample() {
    </TableContainer>
 
      <Conversion value={value}/>
+     <Description setPipeDevelopmentLength={setPipeDevelopmentLength}/>
+
+     <Final valueTotal={value} basementTotal={basementTotal} groundTotal={groundTotal} firstTotal={firstTotal} secondTotal={secondTotal} thirdTotal={thirdTotal} fourthTotal={fourthTotal} fifthTotal={fifthTotal} pipeDevelopmentLength={pipeDevelopmentLength}/>
 
     <Modal
     show={modalShowBasement}
@@ -99,7 +104,7 @@ function SmallExample() {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Basement Entry Modal - {basementTotal}
+          Basement Entry Modal - {basementTotal.toFixed(3)}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body
@@ -120,7 +125,7 @@ function SmallExample() {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Ground Entry Modal - {groundTotal}
+          Ground Entry Modal - {groundTotal.toFixed(3)}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body
@@ -142,7 +147,7 @@ function SmallExample() {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          1st Floor Entry Modal - {firstTotal}
+          1st Floor Entry Modal - {firstTotal.toFixed(3)}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body
@@ -164,7 +169,7 @@ function SmallExample() {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          2nd Floor Entry Modal - {secondTotal}
+          2nd Floor Entry Modal - {secondTotal.toFixed(3)}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body
@@ -186,7 +191,7 @@ function SmallExample() {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          3rd Floor Entry Modal - {thirdTotal}
+          3rd Floor Entry Modal - {thirdTotal.toFixed(3)}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body
@@ -208,7 +213,7 @@ function SmallExample() {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          4th Floor Entry Modal - {fourthTotal}
+          4th Floor Entry Modal - {fourthTotal.toFixed(3)}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body
@@ -230,7 +235,7 @@ function SmallExample() {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          5th Floor Entry Modal - {fifthTotal}
+          5th Floor Entry Modal - {fifthTotal.toFixed(3)}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body
